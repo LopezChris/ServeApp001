@@ -2,7 +2,10 @@ $(document).ready(function(){
     var gallery = null;
 
     $("#getSubscriptionWorkflows").click(function(){
-        gallery = new Gallery($("#apiLocation").val().trim(), $("#apiKey").val().trim(), $("#apiSecret").val().trim());
+        //gallery = new Gallery("http://localhost:80/gallery/api/v1", "8D7DD5DCF6A5FF5113f2ef0d4d5c74a17d16c47424e6521e4ab396a", "ab7d7f168635bb4b9762d53a141ef55b4a1055e1556b49666af17ce3f46ae90f");
+        gallery = new Gallery("http://localhost:80/gallery/api/v1", "8D7DD5DCF6A5FF5113f2ef0d4d5c74a17d16c47424e6521e4ab396a", "ab7d7f168635bb4b9762d53a141ef55b4a1055e1556b49666af17ce3f46ae90f");
+        
+        
         gallery.getSubscriptionWorkflows(function(workflows){
             var listStr = "";
             var len = workflows.length;
@@ -28,7 +31,7 @@ $(document).ready(function(){
             $("#appInterface").html('<span class="red">please enter an app ID.</span>');
             return;
         }
-        gallery = new Gallery($("#apiLocation").val().trim(), $("#apiKey").val().trim(), $("#apiSecret").val().trim());
+        gallery = new Gallery("http://localhost:80/gallery/api/v1", "8D7DD5DCF6A5FF5113f2ef0d4d5c74a17d16c47424e6521e4ab396a", "ab7d7f168635bb4b9762d53a141ef55b4a1055e1556b49666af17ce3f46ae90f");
         gallery.getAppQuestions(workflowId, function(questions){
             var listStr = "<table>";
             var len = questions.length;
@@ -57,13 +60,15 @@ $(document).ready(function(){
 
     $("#executeWorkflow").click(function(){
         var workflowId = $("#workflowId").val().trim();
-        var questions = $("#appInterface").serializeArray();
+        //var questions = $("#appInterface").serializeArray();
+        var questions = $("#appInterface").serialize();
+        
         if (!workflowId) {
             $("#jobIdDiv").html('<span class="red">please enter a workflow Id.</span>');
             return;
         }
         $("#jobIdDiv").html('');
-        gallery = new Gallery($("#apiLocation").val().trim(), $("#apiKey").val().trim(), $("#apiSecret").val().trim());
+        gallery = new Gallery("http://localhost:80/gallery/api/v1", "8D7DD5DCF6A5FF5113f2ef0d4d5c74a17d16c47424e6521e4ab396a", "ab7d7f168635bb4b9762d53a141ef55b4a1055e1556b49666af17ce3f46ae90f");
         gallery.executeWorkflow(workflowId, questions, function(job){
             $("#jobIdDiv").html('Job Id: ' + job.id);
         }, function(response){
@@ -78,7 +83,7 @@ $(document).ready(function(){
             $("#jobsByWorkflow").html('<span class="red">please enter a workflow Id.</span>');
             return;
         }
-        gallery = new Gallery($("#apiLocation").val().trim(), $("#apiKey").val().trim(), $("#apiSecret").val().trim());
+        gallery = new Gallery("http://localhost:80/gallery/api/v1", "8D7DD5DCF6A5FF5113f2ef0d4d5c74a17d16c47424e6521e4ab396a", "ab7d7f168635bb4b9762d53a141ef55b4a1055e1556b49666af17ce3f46ae90f");
         gallery.getJobsByWorkflow(workflowId, function(jobs){
             var job;
             var jobString = "";
@@ -103,7 +108,7 @@ $(document).ready(function(){
             $("#jobDetails").html('<span class="red">please enter a job Id.</span>');
             return;
         }
-        gallery = new Gallery($("#apiLocation").val().trim(), $("#apiKey").val().trim(), $("#apiSecret").val().trim());
+        gallery = new Gallery("http://localhost:80/gallery/api/v1", "8D7DD5DCF6A5FF5113f2ef0d4d5c74a17d16c47424e6521e4ab396a", "ab7d7f168635bb4b9762d53a141ef55b4a1055e1556b49666af17ce3f46ae90f");
         gallery.getJob(jobId, function(job){
             $("#jobDetails").html("<li>" + new Date(job.createDate).toLocaleString() + " - " + job.id + " - " + job.status + " - " + job.disposition + "</li>");
             var outputString = "<ul>";
@@ -144,7 +149,7 @@ $(document).ready(function(){
             $("#outputError").html('<span class="red">please enter an output Id.</span>');
             return;
         }
-        gallery = new Gallery($("#apiLocation").val().trim(), $("#apiKey").val().trim(), $("#apiSecret").val().trim());
+        gallery = new Gallery("http://localhost:80/gallery/api/v1", "8D7DD5DCF6A5FF5113f2ef0d4d5c74a17d16c47424e6521e4ab396a", "ab7d7f168635bb4b9762d53a141ef55b4a1055e1556b49666af17ce3f46ae90f");
         var url = gallery.getOutputFileURL(jobId, outputId, format);
 
         $("#outputError").html('');

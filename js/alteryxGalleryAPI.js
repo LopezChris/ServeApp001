@@ -1,7 +1,10 @@
 Gallery = function(apiLocation, apiKey, apiSecret) {
-    this.apiKey = apiKey;
-    this.apiSecret = apiSecret;
-    this.apiLocation = apiLocation;
+    //this.apiKey = apiKey;
+    this.apiKey = "8D7DD5DCF6A5FF5113f2ef0d4d5c74a17d16c47424e6521e4ab396a";
+    //this.apiSecret = apiSecret;
+    this.apiSecret = "ab7d7f168635bb4b9762d53a141ef55b4a1055e1556b49666af17ce3f46ae90f";
+    //this.apiLocation = apiLocation;
+    this.apiLocation = "http://localhost:80/gallery/api/v1";
 
     this.getSubscriptionWorkflows = function (success, error){
         var type = "GET",
