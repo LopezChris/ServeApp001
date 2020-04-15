@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Meme App By LopezChris</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+		  rel="stylesheet"
+		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+		  crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<h1>Christian's Fantastic Meme Maker</h1>
+				<p>This application is really pointless but at least I am learning how to interact with a back end ¯\_(ツ)_/¯.</p>
+			</header>
+
+		<!-- Meme Form -->
+
+			<label for="cars">Choose a meme base image:</label>
+
+			<select id="cars">
+			<option value="188390779">Woman Yelling At Cat</option>
+			<option value="8072285">Doge</option>
+			<option value="155067746">Surprised Pikachu</option>
+			<option value="61527">Y U No</option>
+			</select>	
+			<br/>
+
+			<h4>Text 1</h4>
+			<div><input type="text" id="myText" value="Lol"></div>
+			<br/>
+			<h4>Text 2</h4>
+			<div><input type="text" id="myText2" value="Not Again"></div>
+			<br/>
+			<button id="test">Make me a meme pls</button>
+			<br/>
+			<div id="res"></div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Untitled.</li><li>Credits: <a href="http://c-lopez.com">Christian Lopez</a></li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="./start.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+			
+	</body>
+</html>
