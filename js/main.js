@@ -21,10 +21,6 @@ $(document).ready(function(){
         });
     });
 
-    $("#getPublicWorkflows").click(function(){
-        alert("coming soon!");
-    });
-
     $("#getAppInterface").click(function(){
         var workflowId = $("#workflowId").val().trim();
         if (!workflowId) {
@@ -60,8 +56,9 @@ $(document).ready(function(){
 
     $("#executeWorkflow").click(function(){
         var workflowId = $("#workflowId").val().trim();
-        //var questions = $("#appInterface").serializeArray();
-        var questions = $("#appInterface").serialize();
+        var questions = $("#appInterface").serializeArray();
+        console.log(questions)
+        //var questions = $("#appInterface").serialize();
         
         if (!workflowId) {
             $("#jobIdDiv").html('<span class="red">please enter a workflow Id.</span>');
