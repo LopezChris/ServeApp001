@@ -22,7 +22,7 @@ $(document).ready(function(){
     });
 
     $("#getAppInterface").click(function(){
-        var workflowId = $("#workflowId").val().trim();
+        var workflowId =  "5e9c9bb3700b0ac6d8638b37";
         if (!workflowId) {
             $("#appInterface").html('<span class="red">please enter an app ID.</span>');
             return;
@@ -55,7 +55,7 @@ $(document).ready(function(){
     });
 
     $("#executeWorkflow").click(function(){
-        var workflowId = $("#workflowId").val().trim();
+        var workflowId =  "5e9c9bb3700b0ac6d8638b37";
         var questions = $("#appInterface").serializeArray();
         console.log(questions)
         //var questions = $("#appInterface").serialize();
@@ -75,7 +75,7 @@ $(document).ready(function(){
     });
 
     $("#getJobsByWorkflow").click(function(){
-        var workflowId = $("#workflowIdForJobs").val().trim();
+        var workflowId =  "5e9c9bb3700b0ac6d8638b37";
         if (!workflowId) {
             $("#jobsByWorkflow").html('<span class="red">please enter a workflow Id.</span>');
             return;

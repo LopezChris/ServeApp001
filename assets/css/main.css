@@ -206,7 +206,7 @@ input, select, textarea {
 	}
 
 	code {
-		background: #f7f7f7;
+		background: #e7f7f7;
 		border-radius: 0.35em;
 		border: solid 2px #efefef;
 		font-family: "Courier New", monospace;
@@ -1817,7 +1817,7 @@ input, select, textarea {
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
-		background: #f7f7f7;
+		background: #e7f7f7;
 		border-radius: 0.35em;
 		border: solid 2px transparent;
 		color: inherit;
@@ -1921,7 +1921,7 @@ input, select, textarea {
 
 			input[type="checkbox"] + label:before,
 			input[type="radio"] + label:before {
-				background: #f7f7f7;
+				background: #e7f7f7;
 				border-radius: 0.35em;
 				border: solid 2px transparent;
 				content: '';
@@ -2380,7 +2380,7 @@ input, select, textarea {
 		}
 
 			table tbody tr:nth-child(2n + 1) {
-				background-color: #f7f7f7;
+				background-color: #e7f7f7;
 			}
 
 		table td {
