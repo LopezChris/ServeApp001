@@ -2,8 +2,7 @@ $(document).ready(function(){
     var gallery = null;
 
     $("#getSubscriptionWorkflows").click(function(){
-        //gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7DD5DCF6A5FF5113f2ef0d4d5c74a17d16c47424e6521e4ab396a", "ab7d7f168635bb4b9762d53a141ef55b4a1055e1556b49666af17ce3f46ae90f");
-        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7DD5DCF6A5FF5113f2ef0d4d5c74a17d16c47424e6521e4ab396a", "ab7d7f168635bb4b9762d53a141ef55b4a1055e1556b49666af17ce3f46ae90f");
+        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7E7779C4018A75780415a2c974cba1dfd9c754398587bdd4593e8", "0f9ec6f63088c5d41327f674792e2a1f6db961f22a9049ad6131a8c882426ce3");
         
         
         gallery.getSubscriptionWorkflows(function(workflows){
@@ -22,12 +21,12 @@ $(document).ready(function(){
     });
 
     $("#getAppInterface").click(function(){
-        var workflowId =  "5e9c9bb3700b0ac6d8638b37";
+        var workflowId =  "5ea1db8c700b0ac84c4779d6";
         if (!workflowId) {
             $("#appInterface").html('<span class="red">please enter an app ID.</span>');
             return;
         }
-        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7DD5DCF6A5FF5113f2ef0d4d5c74a17d16c47424e6521e4ab396a", "ab7d7f168635bb4b9762d53a141ef55b4a1055e1556b49666af17ce3f46ae90f");
+        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7E7779C4018A75780415a2c974cba1dfd9c754398587bdd4593e8", "0f9ec6f63088c5d41327f674792e2a1f6db961f22a9049ad6131a8c882426ce3");
         gallery.getAppQuestions(workflowId, function(questions){
             var listStr = "<table>";
             var len = questions.length;
@@ -55,7 +54,7 @@ $(document).ready(function(){
     });
 
     $("#executeWorkflow").click(function(){
-        var workflowId =  "5e9c9bb3700b0ac6d8638b37";
+        var workflowId =  "5ea1db8c700b0ac84c4779d6";
         var questions = $("#appInterface").serializeArray();
         console.log(questions)
         //var questions = $("#appInterface").serialize();
@@ -65,7 +64,7 @@ $(document).ready(function(){
             return;
         }
         $("#jobIdDiv").html('');
-        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7DD5DCF6A5FF5113f2ef0d4d5c74a17d16c47424e6521e4ab396a", "ab7d7f168635bb4b9762d53a141ef55b4a1055e1556b49666af17ce3f46ae90f");
+        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7E7779C4018A75780415a2c974cba1dfd9c754398587bdd4593e8", "0f9ec6f63088c5d41327f674792e2a1f6db961f22a9049ad6131a8c882426ce3");
         gallery.executeWorkflow(workflowId, questions, function(job){
             $("#jobIdDiv").html('Job Id: ' + job.id);
         }, function(response){
@@ -75,12 +74,12 @@ $(document).ready(function(){
     });
 
     $("#getJobsByWorkflow").click(function(){
-        var workflowId =  "5e9c9bb3700b0ac6d8638b37";
+        var workflowId =  "5ea1db8c700b0ac84c4779d6";
         if (!workflowId) {
             $("#jobsByWorkflow").html('<span class="red">please enter a workflow Id.</span>');
             return;
         }
-        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7DD5DCF6A5FF5113f2ef0d4d5c74a17d16c47424e6521e4ab396a", "ab7d7f168635bb4b9762d53a141ef55b4a1055e1556b49666af17ce3f46ae90f");
+        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7E7779C4018A75780415a2c974cba1dfd9c754398587bdd4593e8", "0f9ec6f63088c5d41327f674792e2a1f6db961f22a9049ad6131a8c882426ce3");
         gallery.getJobsByWorkflow(workflowId, function(jobs){
             var job;
             var jobString = "";
@@ -105,7 +104,7 @@ $(document).ready(function(){
             $("#jobDetails").html('<span class="red">please enter a job Id.</span>');
             return;
         }
-        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7DD5DCF6A5FF5113f2ef0d4d5c74a17d16c47424e6521e4ab396a", "ab7d7f168635bb4b9762d53a141ef55b4a1055e1556b49666af17ce3f46ae90f");
+        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7E7779C4018A75780415a2c974cba1dfd9c754398587bdd4593e8", "0f9ec6f63088c5d41327f674792e2a1f6db961f22a9049ad6131a8c882426ce3");
         gallery.getJob(jobId, function(job){
             $("#jobDetails").html("<li>" + new Date(job.createDate).toLocaleString() + " - " + job.id + " - " + job.status + " - " + job.disposition + "</li>");
             var outputString = "<ul>";
@@ -146,7 +145,7 @@ $(document).ready(function(){
             $("#outputError").html('<span class="red">please enter an output Id.</span>');
             return;
         }
-        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7DD5DCF6A5FF5113f2ef0d4d5c74a17d16c47424e6521e4ab396a", "ab7d7f168635bb4b9762d53a141ef55b4a1055e1556b49666af17ce3f46ae90f");
+        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7E7779C4018A75780415a2c974cba1dfd9c754398587bdd4593e8", "0f9ec6f63088c5d41327f674792e2a1f6db961f22a9049ad6131a8c882426ce3");
         var url = gallery.getOutputFileURL(jobId, outputId, format);
 
         $("#outputError").html('');

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>COVID19</title>
+		<title>MEME APP API</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -11,12 +11,12 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<h1><strong>COVID19</strong> Competition Entry Application<br />
-					crafted by <a href="http://c-lopez.com">Christian Lopez</a> and Digan Parikh.</h1>
+					<h1><strong>MEME APP API</strong> Use a workflow on your browser to make memes<br />
+					crafted by <a href="http://c-lopez.com">Christian Lopez</a>.</h1>
 					<br/>
 					<br/>
 					For Live App Demo Ensure you are in AYX network via VPN.
-					Maintained by Christian Lopez and Digan Parikh
+					Maintained by Christian Lopez.
 				</div>
 			</header>
 
@@ -26,7 +26,7 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h1>COVID19 Resource Distribution<br /></h1>
+							<h1>MEME API APP<br /></h1>
 							<p>Note: This application's backend is running on a personal server it might be down depending on time of day.</p>
 						</header>
 						<!--Remove this later-->
@@ -50,8 +50,23 @@
 						<!--
 						<label>Workflow ID: </label><input id="workflowId" type="text" value="5e9c9bb3700b0ac6d8638b37"> -->
 						<br/>
-						<button id="getAppInterface" class="button">Get Questions</button>
-						<form id="appInterface"></form>
+						<!-- <button id="getAppInterface" class="button">Get Questions</button>
+						<form id="appInterface"></form> -->
+
+						<form id="appInterface">
+							<table>
+								<tbody><tr>
+									<td class="name"><label>Text 1</label></td>
+									<td><input type="text" class="QuestionTextBox" value="Yo Dawg" name="Text Box (30)"></td></tr><tr>
+									<td class="name"><label>Text 2</label></td>
+									<td><input type="text" class="QuestionTextBox" value="Heard you like apis so we put an api in your api so you can use apis while you call your api" name="Text Box (32)"></td></tr><tr>
+									<td class="name"><label>Choose your lulz</label></td><td><input type="text" class="QuestionListBox" value="101716" name="Drop Down (34)"><div>options: 101716, 213059118, 13036679, 112126428</div></td>
+									</tr>
+								</tbody>
+							</table>
+						</form>
+
+
 						<button id="executeWorkflow" class="button">Execute</button>
 						<div id="jobIdDiv"></div>
 						<br/>
