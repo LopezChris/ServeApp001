@@ -1,10 +1,13 @@
 $(document).ready(function(){
-    var gallery = null;
+var gallery = null;
+
+
+    var apiKey = '8D7E7779C4018A75780415a2c974cba1dfd9c754398587bdd4593e8'
+    var apiSecret = '0f9ec6f63088c5d41327f674792e2a1f6db961f22a9049ad6131a8c882426ce3'
+    var URL = 'http://localhost:80/gallery/api/v1/'
 
     $("#getSubscriptionWorkflows").click(function(){
-        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7E7779C4018A75780415a2c974cba1dfd9c754398587bdd4593e8", "0f9ec6f63088c5d41327f674792e2a1f6db961f22a9049ad6131a8c882426ce3");
-        
-        
+        gallery = new Gallery(URL, apiKey, apiSecret);
         gallery.getSubscriptionWorkflows(function(workflows){
             var listStr = "";
             var len = workflows.length;
@@ -20,13 +23,14 @@ $(document).ready(function(){
         });
     });
 
+
     $("#getAppInterface").click(function(){
-        var workflowId =  "5ea1db8c700b0ac84c4779d6";
+        var workflowId = $("#workflowId").val().trim();
         if (!workflowId) {
             $("#appInterface").html('<span class="red">please enter an app ID.</span>');
             return;
         }
-        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7E7779C4018A75780415a2c974cba1dfd9c754398587bdd4593e8", "0f9ec6f63088c5d41327f674792e2a1f6db961f22a9049ad6131a8c882426ce3");
+        gallery = new Gallery(URL, apiKey, apiSecret);
         gallery.getAppQuestions(workflowId, function(questions){
             var listStr = "<table>";
             var len = questions.length;
@@ -54,17 +58,14 @@ $(document).ready(function(){
     });
 
     $("#executeWorkflow").click(function(){
-        var workflowId =  "5ea1db8c700b0ac84c4779d6";
+        var workflowId = $("#workflowId").val().trim();
         var questions = $("#appInterface").serializeArray();
-        console.log(questions)
-        //var questions = $("#appInterface").serialize();
-        
         if (!workflowId) {
             $("#jobIdDiv").html('<span class="red">please enter a workflow Id.</span>');
             return;
         }
         $("#jobIdDiv").html('');
-        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7E7779C4018A75780415a2c974cba1dfd9c754398587bdd4593e8", "0f9ec6f63088c5d41327f674792e2a1f6db961f22a9049ad6131a8c882426ce3");
+        gallery = new Gallery(URL, apiKey, apiSecret);
         gallery.executeWorkflow(workflowId, questions, function(job){
             $("#jobIdDiv").html('Job Id: ' + job.id);
         }, function(response){
@@ -74,12 +75,12 @@ $(document).ready(function(){
     });
 
     $("#getJobsByWorkflow").click(function(){
-        var workflowId =  "5ea1db8c700b0ac84c4779d6";
+        var workflowId = $("#workflowIdForJobs").val().trim();
         if (!workflowId) {
             $("#jobsByWorkflow").html('<span class="red">please enter a workflow Id.</span>');
             return;
         }
-        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7E7779C4018A75780415a2c974cba1dfd9c754398587bdd4593e8", "0f9ec6f63088c5d41327f674792e2a1f6db961f22a9049ad6131a8c882426ce3");
+        gallery = new Gallery(URL, apiKey, apiSecret);
         gallery.getJobsByWorkflow(workflowId, function(jobs){
             var job;
             var jobString = "";
@@ -104,7 +105,8 @@ $(document).ready(function(){
             $("#jobDetails").html('<span class="red">please enter a job Id.</span>');
             return;
         }
-        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7E7779C4018A75780415a2c974cba1dfd9c754398587bdd4593e8", "0f9ec6f63088c5d41327f674792e2a1f6db961f22a9049ad6131a8c882426ce3");
+        gallery = new Gallery(URL, apiKey, apiSecret);
+
         gallery.getJob(jobId, function(job){
             $("#jobDetails").html("<li>" + new Date(job.createDate).toLocaleString() + " - " + job.id + " - " + job.status + " - " + job.disposition + "</li>");
             var outputString = "<ul>";
@@ -114,6 +116,8 @@ $(document).ready(function(){
                 outputString += "<li>" + output.name + " - " + output.id + " - [" + output.formats.toString() + "]";
             }
             $("#jobDetails").append(outputString);
+
+            
 
             var message;
             var errorString = "<ul>";
@@ -133,6 +137,7 @@ $(document).ready(function(){
         });
     });
 
+
     $("#getOutputFile").click(function(ev){
         var jobId = $("#jobId").val().trim();
         var outputId = $("#outputId").val().trim();
@@ -145,10 +150,17 @@ $(document).ready(function(){
             $("#outputError").html('<span class="red">please enter an output Id.</span>');
             return;
         }
-        gallery = new Gallery("http://IR-LT-857:80/gallery/api/v1", "8D7E7779C4018A75780415a2c974cba1dfd9c754398587bdd4593e8", "0f9ec6f63088c5d41327f674792e2a1f6db961f22a9049ad6131a8c882426ce3");
+        gallery = new Gallery(URL, apiKey, apiSecret);
         var url = gallery.getOutputFileURL(jobId, outputId, format);
+        console.log(url)
 
         $("#outputError").html('');
+        //console.log(url)
         window.location.assign(url);
+
+
+
     });
+
+
 });
