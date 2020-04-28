@@ -2,9 +2,6 @@ $(document).ready(function(){
 var gallery = null;
 
 
-    var apiKey = '8D7E7779C4018A75780415a2c974cba1dfd9c754398587bdd4593e8'
-    var apiSecret = '0f9ec6f63088c5d41327f674792e2a1f6db961f22a9049ad6131a8c882426ce3'
-    var URL = 'http://localhost:80/gallery/api/v1/'
 
     $("#getSubscriptionWorkflows").click(function(){
         gallery = new Gallery(URL, apiKey, apiSecret);
