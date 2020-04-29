@@ -1,10 +1,7 @@
 Gallery = function(apiLocation, apiKey, apiSecret) {
-    //this.apiKey = apiKey;
-    this.apiKey = "8D7E7779C4018A75780415a2c974cba1dfd9c754398587bdd4593e8";
-    //this.apiSecret = apiSecret;
-    this.apiSecret = "0f9ec6f63088c5d41327f674792e2a1f6db961f22a9049ad6131a8c882426ce3";
-    //this.apiLocation = apiLocation;
-    this.apiLocation = "http://IR-LT-857:80/gallery/api/v1";
+    this.apiKey = apiKey;
+    this.apiSecret = apiSecret;
+    this.apiLocation = apiLocation;
 
     this.getSubscriptionWorkflows = function (success, error){
         var type = "GET",

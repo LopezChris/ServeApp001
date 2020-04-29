@@ -2,7 +2,6 @@ $(document).ready(function(){
 var gallery = null;
 
 
-
     $("#getSubscriptionWorkflows").click(function(){
         gallery = new Gallery(URL, apiKey, apiSecret);
         gallery.getSubscriptionWorkflows(function(workflows){
