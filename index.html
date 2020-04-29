@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Whiskey Analytics</title>
+		<title>Alteryx API </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -11,12 +11,12 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<h1><strong>COVID19</strong> Competition Entry Application<br />
-					crafted by <a href="https://www.linkedin.com/in/diganparikh/">Digan Parikh</a> </h1>
+					<h1><strong>Server API Demo</strong><br /></h1></br>
+					
+					<h3>Powered By   <a href="https://www.alteryx.com/products/alteryx-platform/alteryx-server">Alteryx Server.</a></h3>
 					<br/>
 					<br/>
-					For Live App Demo Ensure you are in AYX network via VPN.
-					Maintained by Digan Parikh
+					<p style="background-color: rgba(0, 0, 0, 0.6);">Demo Web Appplication. Use Alteryx VPN.</p>
 				</div>
 			</header>
 
@@ -26,8 +26,8 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h1>Whiskey Analytics<br /></h1>
-							<p>Note: This application's backend is running on a personal server it might be down depending on time of day.</p>
+							<h1>Alteryx Server Web Application<br /></h1>
+							<p style="background-color: rgba(0, 0, 0, 0.4);"></p>Note: This application's backend is running on a personal server it might be down depending on time of day.</p>
 						</header>
 						<!--Remove this later-->
 						
@@ -42,20 +42,26 @@
 
 					-->
 
-						<h3>List</h3>
+						<h3>List Collection Workflows</h3>
 						<button id="getSubscriptionWorkflows" class="button">Get Subscription Workflows</button>
 						<ul id="workflowList"></ul>
 						
 						
-						<h2>Execute</h2>
+						<h3>Get Workflow Questions</h3>
 	
-						<label>Workflow ID: </label><input id="workflowId" type="text" value="5e9c9bb3700b0ac6d8638b37"> 
+						<label>Workflow ID: </label><input id="workflowId" type="text" value=""> 
 						<br/>
 						<button id="getAppInterface" class="button">Get Questions</button>
 						<form id="appInterface"></form>
+
+						<h3>Run Workflow</h3>
+						
+
 						<button id="executeWorkflow" class="button">Execute</button>
 						<div id="jobIdDiv"></div>
 						<br/>
+
+						
 
 						<label>Job ID: </label><input id="jobId" type="text">
 						<button id="getJobStatus" class="button">Get Job Status</button>

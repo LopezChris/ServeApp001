@@ -33,6 +33,7 @@ body {
 	line-height: 1;
 }
 
+
 ol, ul {
 	list-style: none;
 }
@@ -113,6 +114,7 @@ input, select, textarea {
 		border-bottom: dotted 1px;
 		color: #49bf9d;
 		text-decoration: none;
+		font-size: 1em;
 	}
 
 		a:hover {
@@ -123,7 +125,7 @@ input, select, textarea {
 
 	strong, b {
 		color: #787878;
-		font-weight: 400;
+		font-weight: 800;
 	}
 
 	em, i {
@@ -1765,7 +1767,7 @@ input, select, textarea {
 	}
 
 	header p {
-		color: #b2b2b2;
+		color: #FFFFFF;
 		position: relative;
 		margin: 0 0 1.5em 0;
 	}
@@ -2628,7 +2630,7 @@ input, select, textarea {
 		}
 
 		#header h2, #header h3, #header h4, #header h5, #header h6 {
-			color: #49bf9d;
+			color: #ffffff;
 		}
 
 		#header h1 {
